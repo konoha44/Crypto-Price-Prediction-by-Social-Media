@@ -1,0 +1,53 @@
+exclude: 'LICENSE'
+repos:
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-docstring-first
+      - id: check-yaml
+      - id: pretty-format-json
+        args: [--autofix, --no-ensure-ascii]
+      - id: check-added-large-files
+      - id: check-toml
+      - id: no-commit-to-branch
+
+  - repo: https://github.com/asottile/add-trailing-comma
+    rev: v2.0.1
+    hooks:
+      - id: add-trailing-comma
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.3.1
+    hooks:
+    - id: pyupgrade
+      args: [--py38-plus, --keep-runtime-typing]
+
+  - repo: local
+    hooks:
+
+    - id: isort
+      name: isort
+      entry: isort --settings-path pyproject.toml
+      language: system
+      types: [python]
+
+    - id: black
+      name: black
+      entry: black --config pyproject.toml
+      language: system
+      types: [python]
+
+    - id: mypy
+      name: mypy
+      entry: mypy --ignore-missing-imports
+      language: system
+      types: [python]
+
+    - id: flakeheaven
+      name: flakeheaven
+      entry: flakeheaven lint
+      language: system
+      types: [python]

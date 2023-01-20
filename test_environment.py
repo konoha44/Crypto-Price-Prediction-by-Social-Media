@@ -1,3 +1,4 @@
+"""Module for test existing python env."""
 import sys
 
 REQUIRED_PYTHON = "python3"
@@ -10,16 +11,22 @@ def main():
     elif REQUIRED_PYTHON == "python3":
         required_major = 3
     else:
-        raise ValueError("Unrecognized python interpreter: {}".format(
-            REQUIRED_PYTHON))
+        raise ValueError(
+            "Unrecognized python interpreter: {}".format(
+                REQUIRED_PYTHON,
+            ),
+        )
 
     if system_major != required_major:
         raise TypeError(
             "This project requires Python {}. Found: Python {}".format(
-                required_major, sys.version))
+                required_major,
+                sys.version,
+            ),
+        )
     else:
         print(">>> Development environment passes all tests!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

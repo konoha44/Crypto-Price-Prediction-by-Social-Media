@@ -1,0 +1,56 @@
+
+[mypy]
+ignore_missing_imports = true
+show_error_code = true
+
+[tool.black]
+line-length = 120
+target-version = ['py38', 'py39', 'py310']
+include = '\.pyi?$'
+exclude = '(\.eggs|\.git|\.hg|\.mypy_cache|\.nox|\.venv|_build|buck-out|build|dist|examples)'
+
+[tool.isort]
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+known_third_party = ["_pytest", "pytest", "pytest_mock"]
+
+
+[tool.flakeheaven]
+extended_default_ignore = []
+exclude = [".venv", "venv", "docs/*", "test_environment.py"]
+nested_classes_whitelist = ["Meta", "Config"]
+format = "grouped"
+show_source = true
+statistics = false
+doctests = true
+enable_extensions = "G"
+accept_encodings = "utf-8"
+max_complexity = 6
+max_line_length = 120
+max_arguments = 8
+max_methods = 8
+max_imports = 13
+max_import_from_members = 13
+max_line_complexity = 20
+max_annotations_complexity = 4
+max_module_members = 20
+
+
+[tool.flakeheaven.flake8]
+jobs = 1
+
+
+[tool.flakeheaven.plugins]
+"flake8-*" = ["+*", "-DJ01", "-DJ08"]
+flake8-rst-docstrings = ["-*"]
+flake8-docstrings = ["+*", "-D105", "-D106", "-D107"]
+flake8-quotes = ["+*", "-Q000"]
+flake8-darglint = ["+*", "-DAR101", "-DAR201", "-DAR401"]
+mccabe = ["+*"]
+pep8-naming = ["+*", "-N805"]
+pyflakes = ["+*"]
+wemake-python-styleguide = ["+*", "-WPS100","-WPS115", "-WPS226", "-WPS303", "-WPS305",  "-WPS306", "-WPS323", "-WPS326", "-WPS331", "-WPS410", "-WPS348", "-WPS407", "-WPS412", "-WPS602"]
+flake8-bandit = ["-*"]
+flake8-annotations = ["-*"]
+flake8-isort = ["-*"]
