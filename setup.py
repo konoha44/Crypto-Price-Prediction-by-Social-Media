@@ -12,5 +12,5 @@ setup(
     version="0.0.1",
     description="Crypto Price Prediction by Social Media uses social media data to predict crypto prices.",
     author="konoha44",
-    license="",
+    license="Apache License Version 2.0",
 )

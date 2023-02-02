@@ -87,3 +87,12 @@ target/
 
 # Mypy cache
 .mypy_cache/
+tox 2.ini
+pyproject 2.toml
+raw_btc_data.pkl
+models/bin_threshold.pkl
+models/model.pkl
+models/vectorizer.pkl
+temp.ipynb
+raw_twitter_data.pkl
+setup 2.py

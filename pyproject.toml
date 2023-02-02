@@ -37,10 +37,6 @@ max_annotations_complexity = 4
 max_module_members = 20
 
 
-[tool.flakeheaven.flake8]
-jobs = 1
-
-
 [tool.flakeheaven.plugins]
 "flake8-*" = ["+*", "-DJ01", "-DJ08"]
 flake8-rst-docstrings = ["-*"]
