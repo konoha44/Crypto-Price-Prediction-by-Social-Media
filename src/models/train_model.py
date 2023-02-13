@@ -174,7 +174,10 @@ def train_pipeline(dataset: Optional[pd.DataFrame] = None, **args) -> pd.DataFra
     dataset = preprocess_data(dataset)
 
     train_pred_results = train_pipeline_all_iterations(dataset)
+
+    train_pred_results.to_csv("./models/train_pred_results.csv", index=False)
     logger.info(train_pred_results)
+
     return train_pred_results
 
 
