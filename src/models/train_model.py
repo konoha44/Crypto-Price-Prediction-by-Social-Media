@@ -1,5 +1,5 @@
 """Module for train model and make artifacts."""
-from typing import Any, List, Tuple
+from typing import Any, List, Optional, Tuple
 
 import numpy as np
 import pandas as pd
@@ -108,9 +108,27 @@ def bin_tr_by_fscore(
     return fb_array.max(), bin_treshhold
 
 
-def train_pipeline() -> pd.DataFrame:  # noqa: WPS210
-    """TODO."""
-    dataset = load_data()
+def train_pipeline(dataset: Optional[pd.DataFrame] = None, **args) -> pd.DataFrame:  # noqa: WPS210
+    """Start general training pipeline.
+
+    — Load data
+    — Preprocess data
+    — Time-Series CrosVal training pipeline
+    — Compute metrics
+
+
+    Parameters
+    ----------
+    dataset : Optional[pd.DataFrame], optional
+        Raw dataset for preprocessiong, by default None
+
+    Returns
+    -------
+    pd.DataFrame
+        dataframe with metrics and predictions for a next day
+    """
+    if not dataset:
+        dataset = load_data()
     dataset = preprocess_data(dataset)
     pred_true = []
 

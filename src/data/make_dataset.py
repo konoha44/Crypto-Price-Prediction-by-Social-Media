@@ -19,7 +19,7 @@ def compute_targets(soc_med_data: pd.DataFrame, trading_data: pd.DataFrame, targ
     soc_med_data["created_at_d_minus _1_day"] = soc_med_data["created_at_d"] - pd.to_timedelta("1d")
 
     trading_data["rel_diff"] = trading_data["value"].diff() / trading_data["value"].shift(1)
-    # TODO change to not for drop
+    # TODO change to not for drop (growing, not drop)
     trading_data["target"] = (trading_data["rel_diff"] <= target_fraq).astype("int8")
     trading_data = trading_data.reset_index()
 
