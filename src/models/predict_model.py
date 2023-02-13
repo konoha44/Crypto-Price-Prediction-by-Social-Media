@@ -6,6 +6,8 @@ import numpy as np
 from src.data.transformation import TextDataTransformation
 from src.models.artifacts import load_object
 
+STD_OUT_TEPLATE = "Prediction of Movement is {:.3f} and Movement Verdict is {}"  # noqa: P103
+
 
 def preprocess(text: str) -> str:
     """Preprocess string for vectorizer.
@@ -52,5 +54,5 @@ if __name__ == "__main__":
     input_text = input("Enter text\n")  # noqa: WPS421
     if not input_text:
         input_text = "bitcoin is bad coin"
-    model_result = model_inference(input_text)
-    print(input_text, model_result)  # noqa: WPS421
+    prediction, verdict = model_inference(input_text)
+    print(STD_OUT_TEPLATE.format(prediction, verdict))  # noqa: WPS421

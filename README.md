@@ -3,11 +3,60 @@ Crypto Price Prediction by Social Media
 
 "Crypto Price Prediction by Social Media" is a repository that uses social media data to predict crypto prices. It includes algorithms, models, and techniques for data extraction, cleaning, analysis, and prediction. The repository aims to provide a comprehensive resource for those interested in using social media for crypto price prediction.
 
+
+Installation
+------------
+
+```
+pip install .
+```
+
+
+Usage
+==============================
+
+Make DataSet
+------------
+```
+python -m src.data.make_dataset -query cz_binance -target_fraq=0.02
+```
+
+```
+Usage: python -m src.data.make_dataset [OPTIONS]
+
+  Compute dataset for model.
+
+  Runs data processing scripts to download data from social media and trading
+  data to dataset for model training.
+
+Options:
+  --social_source TEXT  Social media source (only one)  [default: twitter]
+  -query TEXT           Social media query (only one @person)
+  -ticker TEXT          Coin for trading data  [default: BTC-USD]
+  -target_fraq FLOAT    Define drop for relative price diff  [default: -0.05]
+  --help                Show this message and exit.
+```
+
+Train model
+------------
+```
+python -m src.models.train_model
+```
+
+Model Prediction
+------------
+```
+>>> python -m src.models.predict_model
+  Enter text
+>>> bitcoin is bad coin
+  Prediction of Movement is 0.715 and Movement Verdict is True
+```
+
+
 Project Organization
 ------------
 
     ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
     ├── README.md          <- The top-level README for developers using this project.
     ├── data
     │   ├── external       <- Data from third party sources.
