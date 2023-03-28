@@ -7,7 +7,7 @@ from loguru import logger
 from src.data.utils import preprocess_data
 from src.models.utils import train_pipeline_all_iterations
 
-logger.add("make_dataset_{time}.log")
+logger.add("train_model_{time}.log")
 
 
 def load_data() -> pd.DataFrame:

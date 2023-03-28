@@ -3,6 +3,10 @@ Crypto Price Prediction by Social Media
 
 "Crypto Price Prediction by Social Media" is a repository that uses social media data to predict crypto prices. It includes algorithms, models, and techniques for data extraction, cleaning, analysis, and prediction. The repository aims to provide a comprehensive resource for those interested in using social media for crypto price prediction.
 
+```
+Now It predicts a drop price movement in next day.
+Price prediction will be in future versions.
+```
 
 Installation
 ------------
@@ -52,6 +56,11 @@ Model Prediction
   Prediction of Movement is 0.715 and Movement Verdict is True
 ```
 
+***
+***
+***
+***
+***
 
 Project Organization
 ------------
@@ -102,5 +111,3 @@ Project Organization
 
 
 --------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
